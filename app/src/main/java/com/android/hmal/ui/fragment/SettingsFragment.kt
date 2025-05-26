@@ -264,7 +264,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), PreferenceFragmen
                     .setTitle(R.string.settings_force_clean_env)
                     .setMessage(R.string.settings_is_clean_env_summary)
                     .setPositiveButton(android.R.string.ok) { _, _ ->
-                        val result = SuUtils.execPrivileged("rm -rf /data/misc/com.google.hmal.*")
+                        val result = SuUtils.execPrivileged("rm -rf /data/misc/com.lbe.security.*")
                         if (result) makeToast(R.string.settings_force_clean_env_toast_successful)
                         else makeToast(R.string.settings_permission_denied)
                     }

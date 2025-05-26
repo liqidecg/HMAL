@@ -34,22 +34,26 @@ class HMALService(val pms: IPackageManager) : IHMALService.Stub() {
     }
 
     private fun searchDataDir() {
-        File("/data/system").list()?.forEach {
-            if (it.startsWith("hide_my_applist") || it.startsWith("h_m_a_l_")) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            dataDir = "/data/data/com.android.hmal/cache/${Utils.generateRandomString(8)}"
+        } else {
+            File("/data/system").list()?.forEach {
+                if (it.startsWith("hide_my_applist") || it.startsWith("h_m_a_l_")) {
                     File("/data/system/$it").deleteRecursively()
-            }
-        }
-        File("/data/misc").list()?.forEach {
-            if (it.startsWith("com.lbe.security.")) {
-                if (!this::dataDir.isInitialized) {
-                    dataDir = "/data/misc/$it"
-                } else if (dataDir != "/data/misc/$it") {
-                    File("/data/misc/$it").deleteRecursively()
                 }
             }
-        }
-        if (!this::dataDir.isInitialized) {
-            dataDir = "/data/misc/com.lbe.security." + Utils.generateRandomString(8)
+            File("/data/misc").list()?.forEach {
+                if (it.startsWith("com.lbe.security.")) {
+                    if (!this::dataDir.isInitialized) {
+                        dataDir = "/data/misc/$it"
+                    } else if (dataDir != "/data/misc/$it") {
+                        File("/data/misc/$it").deleteRecursively()
+                    }
+                }
+            }
+            if (!this::dataDir.isInitialized) {
+                dataDir = "/data/misc/com.lbe.security." + Utils.generateRandomString(8)
+            }
         }
 
         File("$dataDir/log").mkdirs()

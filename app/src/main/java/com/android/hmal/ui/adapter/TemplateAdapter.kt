@@ -2,7 +2,7 @@ package com.android.hmal.ui.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.hmal.R
+import com.lbe.security.R
 import com.android.hmal.service.ConfigManager
 import com.android.hmal.ui.view.ListItemView
 import java.text.Collator

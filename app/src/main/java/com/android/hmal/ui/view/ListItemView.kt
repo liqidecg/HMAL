@@ -6,8 +6,8 @@ import android.widget.LinearLayout
 import androidx.annotation.DrawableRes
 import by.kirich1409.viewbindingdelegate.CreateMethod
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.google.android.hmal.R
-import com.google.android.hmal.databinding.ListItemViewBinding
+import com.lbe.security.R
+import com.lbe.security.databinding.ListItemViewBinding
 
 class ListItemView @JvmOverloads constructor(
     context: Context,

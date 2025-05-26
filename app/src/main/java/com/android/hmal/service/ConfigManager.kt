@@ -1,7 +1,7 @@
 package com.android.hmal.service
 
 import android.os.Build
-import com.google.android.hmal.R
+import com.lbe.security.R
 import com.android.hmal.common.BuildConfig
 import com.android.hmal.common.JsonConfig
 import com.android.hmal.sysApp

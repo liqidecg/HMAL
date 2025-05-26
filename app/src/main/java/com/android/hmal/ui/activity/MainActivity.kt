@@ -7,8 +7,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.material.color.DynamicColors
-import com.google.android.hmal.R
-import com.google.android.hmal.databinding.ActivityMainBinding
+import com.lbe.security.R
+import com.lbe.security.databinding.ActivityMainBinding
 import com.android.hmal.ui.util.ThemeUtils
 import rikka.material.app.MaterialActivity
 

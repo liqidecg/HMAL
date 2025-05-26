@@ -8,7 +8,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.StyleRes
 import androidx.fragment.app.Fragment
 import com.google.android.material.color.DynamicColors
-import com.google.android.hmal.R
+import com.lbe.security.R
 import com.android.hmal.service.PrefManager
 import rikka.core.util.ResourceUtils
 

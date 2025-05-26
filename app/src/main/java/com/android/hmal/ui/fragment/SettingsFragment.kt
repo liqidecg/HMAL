@@ -15,8 +15,8 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.hmal.R
-import com.google.android.hmal.databinding.FragmentSettingsBinding
+import com.lbe.security.R
+import com.lbe.security.databinding.FragmentSettingsBinding
 import com.android.hmal.common.CommonUtils
 import com.android.hmal.common.Constants
 import com.android.hmal.sysApp

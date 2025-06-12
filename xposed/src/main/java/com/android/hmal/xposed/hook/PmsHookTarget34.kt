@@ -11,7 +11,7 @@ import com.android.hmal.common.Constants
 import com.android.hmal.xposed.*
 import java.util.concurrent.atomic.AtomicReference
 
-@RequiresApi(Build.VERSION_CODES.Q) // SDK29+
+@RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
 class PmsHookTarget34(private val service: HMALService) : IFrameworkHook {
 
     companion object {
@@ -19,10 +19,8 @@ class PmsHookTarget34(private val service: HMALService) : IFrameworkHook {
     }
 
     private val getPackagesForUidMethod by lazy {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-            findMethod("com.android.server.pm.Computer") { name == "getPackagesForUid" }
-        } else {
-            findMethod("com.android.server.pm.PackageManagerService") { name == "getPackagesForUid" }
+        findMethod("com.android.server.pm.Computer") {
+            name == "getPackagesForUid"
         }
     }
 
@@ -30,83 +28,51 @@ class PmsHookTarget34(private val service: HMALService) : IFrameworkHook {
     private var exphook: XC_MethodHook.Unhook? = null
     private var lastFilteredApp: AtomicReference<String?> = AtomicReference(null)
 
+    @Suppress("UNCHECKED_CAST")
     override fun load() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-            hook = findMethod("com.android.server.pm.AppsFilterImpl", findSuper = true) {
-                name == "shouldFilterApplication"
-            }.hookBefore { param ->
-                runCatching {
-                    val snapshot = param.args[0]
-                    val callingUid = param.args[1] as Int
-                    if (callingUid == Constants.UID_SYSTEM) return@hookBefore
-
-                    val callingApps = Utils.binderLocalScope {
-                        runCatching {
-                            getPackagesForUidMethod.invoke(snapshot, callingUid) as? Array<String>
-                        }.getOrNull()
-                    } ?: return@hookBefore
-
-                    val targetApp = Utils.getPackageNameFromPackageSettings(param.args[3])
-
-                    for (caller in callingApps) {
-                        if (service.shouldHide(caller, targetApp)) {
-                            param.result = true
-                            val last = lastFilteredApp.getAndSet(caller)
-                            if (last != caller) return@hookBefore
-                        }
+        hook = findMethod("com.android.server.pm.AppsFilterImpl", findSuper = true) {
+            name == "shouldFilterApplication"
+        }.hookBefore { param ->
+            runCatching {
+                val snapshot = param.args[0]
+                val callingUid = param.args[1] as Int
+                if (callingUid == Constants.UID_SYSTEM) return@hookBefore
+                val callingApps = Utils.binderLocalScope {
+                    getPackagesForUidMethod.invoke(snapshot, callingUid) as Array<String>?
+                } ?: return@hookBefore
+                val targetApp = Utils.getPackageNameFromPackageSettings(param.args[3]) // PackageSettings <- PackageStateInternal
+                for (caller in callingApps) {
+                    if (service.shouldHide(caller, targetApp)) {
+                        param.result = true
+                        val last = lastFilteredApp.getAndSet(caller)
+                        if (last != caller)
+                        return@hookBefore
                     }
-                }.onFailure { unload() }
+                }
+            }.onFailure {
+                unload()
             }
-
-            exphook = findMethodOrNull("com.android.server.pm.PackageManagerService", findSuper = true) {
-                name == "getArchivedPackageInternal"
-            }?.hookBefore { param ->
-                runCatching {
-                    val callingUid = Binder.getCallingUid()
-                    if (callingUid == Constants.UID_SYSTEM) return@hookBefore
-
-                    val callingApps = Utils.binderLocalScope {
-                        runCatching {
-                            service.pms.getPackagesForUid(callingUid)
-                        }.getOrNull()
-                    } ?: return@hookBefore
-
-                    val targetApp = param.args[0].toString()
-
-                    for (caller in callingApps) {
-                        if (service.shouldHide(caller, targetApp)) {
-                            param.result = null
-                            val last = lastFilteredApp.getAndSet(caller)
-                            if (last != caller) return@hookBefore
-                        }
+        }
+        exphook = findMethodOrNull("com.android.server.pm.PackageManagerService", findSuper = true) {
+            name == "getArchivedPackageInternal"
+        }?.hookBefore { param ->
+            runCatching {
+                val callingUid = Binder.getCallingUid()
+                if (callingUid == Constants.UID_SYSTEM) return@hookBefore
+                val callingApps = Utils.binderLocalScope {
+                    service.pms.getPackagesForUid(callingUid)
+                } ?: return@hookBefore
+                val targetApp = param.args[0].toString()
+                for (caller in callingApps) {
+                    if (service.shouldHide(caller, targetApp)) {
+                        param.result = null
+                        val last = lastFilteredApp.getAndSet(caller)
+                        if (last != caller)
+                        return@hookBefore
                     }
-                }.onFailure { unload() }
-            }
-
-        } else { // 适配 SDK 29 ~ 33
-            hook = findMethod("com.android.server.pm.PackageManagerService", findSuper = true) {
-                name == "getPackageInfo"
-            }.hookBefore { param ->
-                runCatching {
-                    val callingUid = Binder.getCallingUid()
-                    if (callingUid == Constants.UID_SYSTEM) return@hookBefore
-
-                    val callingApps = Utils.binderLocalScope {
-                        runCatching {
-                            getPackagesForUidMethod.invoke(param.thisObject, callingUid) as? Array<String>
-                        }.getOrNull()
-                    } ?: return@hookBefore
-
-                    val targetApp = param.args[0].toString()
-
-                    for (caller in callingApps) {
-                        if (service.shouldHide(caller, targetApp)) {
-                            param.result = null
-                            val last = lastFilteredApp.getAndSet(caller)
-                            if (last != caller) return@hookBefore
-                        }
-                    }
-                }.onFailure { unload() }
+                }
+            }.onFailure {
+                unload()
             }
         }
     }

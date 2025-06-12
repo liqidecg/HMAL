@@ -12,7 +12,7 @@ import com.android.hmal.xposed.*
 import java.util.concurrent.atomic.AtomicReference
 
 @RequiresApi(Build.VERSION_CODES.Q) // SDK29+
-class PmsHookTarget34Compat(private val service: HMALService) : IFrameworkHook {
+class PmsHookTarget34(private val service: HMALService) : IFrameworkHook {
 
     companion object {
         private const val TAG = "PHT34"

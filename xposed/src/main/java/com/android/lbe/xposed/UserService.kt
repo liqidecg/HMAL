@@ -26,7 +26,7 @@ object UserService {
                     return
                 }
                 val extras = Bundle()
-                extras.putBinder("binder", HMALService.instance)
+                extras.putBinder("binder", lbeService.instance)
                 val reply = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                     val attr = AttributionSource.Builder(1000).setPackageName("android").build()
                     provider.call(attr, Constants.PROVIDER_AUTHORITY, "", null, extras)
@@ -46,7 +46,7 @@ object UserService {
     }
 
     fun register(pms: IPackageManager) {
-        val service = HMALService(pms)
+        val service = lbeService(pms)
         appUid = Utils.getPackageUidCompat(service.pms, Constants.APP_PACKAGE_NAME, 0, 0)
         val appPackage = Utils.getPackageInfoCompat(service.pms, Constants.APP_PACKAGE_NAME, 0, 0)
         waitSystemService("activity")

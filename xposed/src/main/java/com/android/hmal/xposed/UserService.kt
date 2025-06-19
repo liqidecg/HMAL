@@ -1,4 +1,4 @@
-package com.android.hmal.xposed
+package com.android.lbe.xposed
 
 import android.app.ActivityManagerHidden
 import android.content.AttributionSource
@@ -6,8 +6,8 @@ import android.content.pm.IPackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.ServiceManager
-import com.android.hmal.common.BuildConfig
-import com.android.hmal.common.Constants
+import com.android.lbe.common.BuildConfig
+import com.android.lbe.common.Constants
 import rikka.hidden.compat.ActivityManagerApis
 import rikka.hidden.compat.adapter.UidObserverAdapter
 

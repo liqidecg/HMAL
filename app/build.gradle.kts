@@ -50,7 +50,7 @@ kotlin {
 autoResConfig {
     generateClass.set(true)
     generateRes.set(false)
-    generatedClassFullName.set("com.android.hmal.util.LangList")
+    generatedClassFullName.set("com.android.lbe.util.LangList")
     generatedArrayFirstItem.set("SYSTEM")
 }
 

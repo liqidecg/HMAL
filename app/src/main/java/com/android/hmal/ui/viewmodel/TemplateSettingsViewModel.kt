@@ -1,9 +1,9 @@
-package com.android.hmal.ui.viewmodel
+package com.android.lbe.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.ui.fragment.TemplateSettingsFragmentArgs
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.ui.fragment.TemplateSettingsFragmentArgs
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class TemplateSettingsViewModel(

@@ -1,12 +1,12 @@
-package com.android.hmal.service
+package com.android.lbe.service
 
 import android.os.IBinder
 import android.os.IBinder.DeathRecipient
 import android.os.Parcel
 import android.os.RemoteException
 import android.os.ServiceManager
-import com.android.hmal.common.Constants
-import com.android.hmal.common.IHMALService
+import com.android.lbe.common.Constants
+import com.android.lbe.common.IHMALService
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.Method
 import java.lang.reflect.Proxy

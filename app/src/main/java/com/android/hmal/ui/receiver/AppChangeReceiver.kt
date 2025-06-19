@@ -1,10 +1,10 @@
-package com.android.hmal.ui.receiver
+package com.android.lbe.ui.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import com.android.hmal.util.PackageHelper
+import com.android.lbe.util.PackageHelper
 
 class AppChangeReceiver : BroadcastReceiver() {
 

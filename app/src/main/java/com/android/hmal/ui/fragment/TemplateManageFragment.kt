@@ -1,4 +1,4 @@
-package com.android.hmal.ui.fragment
+package com.android.lbe.ui.fragment
 
 import android.graphics.Color
 import android.os.Bundle
@@ -13,11 +13,11 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.transition.MaterialContainerTransform
 import com.lbe.security.R
 import com.lbe.security.databinding.FragmentTemplateManageBinding
-import com.android.hmal.common.JsonConfig
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.ui.adapter.TemplateAdapter
-import com.android.hmal.ui.util.navController
-import com.android.hmal.ui.util.setupToolbar
+import com.android.lbe.common.JsonConfig
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.ui.adapter.TemplateAdapter
+import com.android.lbe.ui.util.navController
+import com.android.lbe.ui.util.setupToolbar
 
 class TemplateManageFragment : Fragment(R.layout.fragment_template_manage) {
 

@@ -1,4 +1,4 @@
-package com.android.hmal.ui.fragment
+package com.android.lbe.ui.fragment
 
 import android.content.Intent
 import android.net.Uri
@@ -15,15 +15,15 @@ import com.google.android.material.transition.MaterialElevationScale
 import com.lbe.security.BuildConfig
 import com.lbe.security.R
 import com.lbe.security.databinding.FragmentHomeBinding
-import com.android.hmal.sysApp
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.service.ServiceClient
-import com.android.hmal.ui.activity.AboutActivity
-import com.android.hmal.ui.util.ThemeUtils.getColor
-import com.android.hmal.ui.util.ThemeUtils.themeColor
-import com.android.hmal.ui.util.makeToast
-import com.android.hmal.ui.util.navController
-import com.android.hmal.ui.util.setupToolbar
+import com.android.lbe.sysApp
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.service.ServiceClient
+import com.android.lbe.ui.activity.AboutActivity
+import com.android.lbe.ui.util.ThemeUtils.getColor
+import com.android.lbe.ui.util.ThemeUtils.themeColor
+import com.android.lbe.ui.util.makeToast
+import com.android.lbe.ui.util.navController
+import com.android.lbe.ui.util.setupToolbar
 import java.io.IOException
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -123,7 +123,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             binding.moduleStatus.setText(R.string.home_xposed_not_activated)
         }
         if (serviceVersion != 0) {
-            if (serviceVersion < com.android.hmal.common.BuildConfig.SERVICE_VERSION) {
+            if (serviceVersion < com.android.lbe.common.BuildConfig.SERVICE_VERSION) {
                 binding.serviceStatus.text = getString(R.string.home_xposed_service_old)
             } else {
                 binding.serviceStatus.text = getString(R.string.home_xposed_service_on, serviceVersion)

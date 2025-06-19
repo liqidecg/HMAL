@@ -1,4 +1,4 @@
-package com.android.hmal.xposed
+package com.android.lbe.xposed
 
 import android.content.pm.ApplicationInfo
 import android.content.pm.IPackageManager

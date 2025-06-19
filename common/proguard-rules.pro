@@ -25,5 +25,5 @@
 # @Serializable and @Polymorphic are used at runtime for polymorphic serialization.
 -keepattributes RuntimeVisibleAnnotations,AnnotationDefault
 
--keep class com.android.hmal.common.JsonConfig { *; }
--keep class com.android.hmal.common.JsonConfig$* { *; }
+-keep class com.android.lbe.common.JsonConfig { *; }
+-keep class com.android.lbe.common.JsonConfig$* { *; }

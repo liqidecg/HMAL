@@ -1,4 +1,4 @@
-package com.android.hmal.ui.activity
+package com.android.lbe.ui.activity
 
 import android.annotation.SuppressLint
 import android.widget.ImageView

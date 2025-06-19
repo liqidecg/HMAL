@@ -1,4 +1,4 @@
-package com.android.hmal.xposed.hook
+package com.android.lbe.xposed.hook
 
 interface IFrameworkHook {
 

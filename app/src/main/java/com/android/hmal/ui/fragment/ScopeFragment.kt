@@ -1,11 +1,11 @@
-package com.android.hmal.ui.fragment
+package com.android.lbe.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.navArgs
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.ui.adapter.AppScopeAdapter
-import com.android.hmal.ui.util.navController
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.ui.adapter.AppScopeAdapter
+import com.android.lbe.ui.util.navController
 
 class ScopeFragment : AppSelectFragment() {
 

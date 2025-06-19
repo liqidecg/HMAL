@@ -1,4 +1,4 @@
-package com.android.hmal.ui.fragment
+package com.android.lbe.ui.fragment
 
 import android.os.Bundle
 import android.view.View
@@ -14,12 +14,12 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.lbe.security.R
 import com.lbe.security.databinding.FragmentSettingsBinding
-import com.android.hmal.common.JsonConfig
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.ui.util.navController
-import com.android.hmal.ui.util.setupToolbar
-import com.android.hmal.ui.viewmodel.AppSettingsViewModel
-import com.android.hmal.util.PackageHelper
+import com.android.lbe.common.JsonConfig
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.ui.util.navController
+import com.android.lbe.ui.util.setupToolbar
+import com.android.lbe.ui.viewmodel.AppSettingsViewModel
+import com.android.lbe.util.PackageHelper
 
 class AppSettingsFragment : Fragment(R.layout.fragment_settings) {
 

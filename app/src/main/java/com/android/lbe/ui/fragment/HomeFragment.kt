@@ -94,7 +94,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             navController.navigate(R.id.nav_app_manage)
         }
         binding.backupConfig.setOnClickListener {
-            backupSAFLauncher.launch("HMAL_Config.json")
+            backupSAFLauncher.launch("lbe_Config.json")
         }
         binding.restoreConfig.setOnClickListener {
             restoreSAFLauncher.launch("application/json")

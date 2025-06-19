@@ -1,13 +1,13 @@
-package com.android.hmal
+package com.android.lbe
 
 import android.annotation.SuppressLint
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import com.lbe.security.R
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.service.PrefManager
-import com.android.hmal.ui.receiver.AppChangeReceiver
-import com.android.hmal.ui.util.makeToast
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.service.PrefManager
+import com.android.lbe.ui.receiver.AppChangeReceiver
+import com.android.lbe.ui.util.makeToast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import me.zhanghai.android.appiconloader.AppIconLoader

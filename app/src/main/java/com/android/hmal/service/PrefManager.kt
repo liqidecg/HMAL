@@ -1,10 +1,10 @@
-package com.android.hmal.service
+package com.android.lbe.service
 
 import android.content.ComponentName
 import android.content.Context.MODE_PRIVATE
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatDelegate
-import com.android.hmal.sysApp
+import com.android.lbe.sysApp
 
 object PrefManager {
 

@@ -18,7 +18,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HMAL"
+rootProject.name = "lbe"
 
 include(
     ":app",

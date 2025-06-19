@@ -1,4 +1,4 @@
-package com.android.hmal.ui.view
+package com.android.lbe.ui.view
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,7 +6,7 @@ import android.widget.LinearLayout
 import by.kirich1409.viewbindingdelegate.CreateMethod
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.lbe.security.databinding.AppItemViewBinding
-import com.android.hmal.util.PackageHelper
+import com.android.lbe.util.PackageHelper
 
 class AppItemView @JvmOverloads constructor(
     context: Context,

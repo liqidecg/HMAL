@@ -1,4 +1,4 @@
-package com.android.hmal.xposed.hook
+package com.android.lbe.xposed.hook
 
 import android.app.Activity
 import android.content.Context
@@ -9,7 +9,7 @@ import android.os.Bundle
 import com.github.kyuubiran.ezxhelper.utils.findMethodOrNull
 import com.github.kyuubiran.ezxhelper.utils.hookBefore
 import de.robv.android.xposed.XC_MethodHook
-import com.android.hmal.xposed.HMALService
+import com.android.lbe.xposed.HMALService
 
 class StartActivityHook(private val service: HMALService) : IFrameworkHook {
 

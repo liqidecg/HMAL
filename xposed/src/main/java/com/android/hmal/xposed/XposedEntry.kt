@@ -1,4 +1,4 @@
-package com.android.hmal.xposed
+package com.android.lbe.xposed
 
 import android.content.pm.IPackageManager
 import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
@@ -7,7 +7,7 @@ import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.IXposedHookZygoteInit
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.callbacks.XC_LoadPackage
-import com.android.hmal.common.Constants
+import com.android.lbe.common.Constants
 import kotlin.concurrent.thread
 
 private const val TAG = "XE"
@@ -22,7 +22,7 @@ class XposedEntry : IXposedHookZygoteInit, IXposedHookLoadPackage {
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         if (lpparam.packageName == Constants.APP_PACKAGE_NAME) {
             EzXHelperInit.initHandleLoadPackage(lpparam)
-            hookAllConstructorAfter("com.android.hmal.MyApp") {
+            hookAllConstructorAfter("com.android.lbe.MyApp") {
                 getFieldByDesc("Lcom/android/hmal/MyApp;->isHooked:Z").setBoolean(it.thisObject, true)
             }
         } else if (lpparam.packageName == "android") {

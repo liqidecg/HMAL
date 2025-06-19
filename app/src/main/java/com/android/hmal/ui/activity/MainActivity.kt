@@ -1,4 +1,4 @@
-package com.android.hmal.ui.activity
+package com.android.lbe.ui.activity
 
 import android.content.res.Resources
 import android.graphics.Color
@@ -9,7 +9,7 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.material.color.DynamicColors
 import com.lbe.security.R
 import com.lbe.security.databinding.ActivityMainBinding
-import com.android.hmal.ui.util.ThemeUtils
+import com.android.lbe.ui.util.ThemeUtils
 import rikka.material.app.MaterialActivity
 
 class MainActivity : MaterialActivity() {

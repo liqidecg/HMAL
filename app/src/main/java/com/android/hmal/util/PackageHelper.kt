@@ -1,13 +1,13 @@
-package com.android.hmal.util
+package com.android.lbe.util
 
 import android.content.pm.ApplicationInfo
 import android.content.pm.IPackageManager
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import com.android.hmal.common.Constants
-import com.android.hmal.sysApp
-import com.android.hmal.service.PrefManager
+import com.android.lbe.common.Constants
+import com.android.lbe.sysApp
+import com.android.lbe.service.PrefManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow

@@ -1,10 +1,10 @@
-package com.android.hmal.xposed
+package com.android.lbe.xposed
 
 import android.content.pm.ApplicationInfo
 import android.content.pm.IPackageManager
 import android.os.Build
-import com.android.hmal.common.*
-import com.android.hmal.xposed.hook.*
+import com.android.lbe.common.*
+import com.android.lbe.xposed.hook.*
 import java.io.File
 
 class HMALService(val pms: IPackageManager) : IHMALService.Stub() {

@@ -7,11 +7,11 @@ import com.github.kyuubiran.ezxhelper.utils.findMethod
 import com.github.kyuubiran.ezxhelper.utils.hookBefore
 import de.robv.android.xposed.XC_MethodHook
 import com.android.lbe.common.CommonUtils
-import com.android.lbe.xposed.HMALService
+import com.android.lbe.xposed.lbeService
 import com.android.lbe.xposed.Utils
 
 @RequiresApi(Build.VERSION_CODES.R)
-class PlatformCompatHook(private val service: HMALService) : IFrameworkHook {
+class PlatformCompatHook(private val service: lbeService) : IFrameworkHook {
 
     companion object {
         private const val TAG = "PCH"

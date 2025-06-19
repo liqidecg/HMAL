@@ -1,4 +1,4 @@
-package com.android.hmal.util
+package com.android.lbe.util
 
 import com.topjohnwu.superuser.Shell
 

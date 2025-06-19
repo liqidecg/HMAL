@@ -1,4 +1,4 @@
-package com.android.hmal.service
+package com.android.lbe.service
 
 import android.content.ContentProvider
 import android.content.ContentValues

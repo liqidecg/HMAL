@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "com.android.hmal.xposed"
+    namespace = "com.android.lbe.xposed"
 
     buildFeatures {
         buildConfig = false

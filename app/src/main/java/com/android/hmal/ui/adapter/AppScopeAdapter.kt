@@ -1,7 +1,7 @@
-package com.android.hmal.ui.adapter
+package com.android.lbe.ui.adapter
 
 import android.view.ViewGroup
-import com.android.hmal.ui.view.AppItemView
+import com.android.lbe.ui.view.AppItemView
 
 class AppScopeAdapter(
     private val checked: MutableSet<String>,

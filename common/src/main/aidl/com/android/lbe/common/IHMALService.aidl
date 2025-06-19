@@ -1,6 +1,6 @@
 package com.android.lbe.common;
 
-interface IHMALService {
+interface lbeService {
 
     void stopService(boolean cleanEnv) = 0;
 

@@ -9,9 +9,9 @@ import android.os.Bundle
 import com.github.kyuubiran.ezxhelper.utils.findMethodOrNull
 import com.github.kyuubiran.ezxhelper.utils.hookBefore
 import de.robv.android.xposed.XC_MethodHook
-import com.android.lbe.xposed.HMALService
+import com.android.lbe.xposed.lbeService
 
-class StartActivityHook(private val service: HMALService) : IFrameworkHook {
+class StartActivityHook(private val service: lbeService) : IFrameworkHook {
 
     companion object {
         private const val TAG = "SAH"

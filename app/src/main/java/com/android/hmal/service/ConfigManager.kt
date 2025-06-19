@@ -1,11 +1,11 @@
-package com.android.hmal.service
+package com.android.lbe.service
 
 import android.os.Build
 import com.lbe.security.R
-import com.android.hmal.common.BuildConfig
-import com.android.hmal.common.JsonConfig
-import com.android.hmal.sysApp
-import com.android.hmal.ui.util.makeToast
+import com.android.lbe.common.BuildConfig
+import com.android.lbe.common.JsonConfig
+import com.android.lbe.sysApp
+import com.android.lbe.ui.util.makeToast
 import java.io.File
 
 object ConfigManager {

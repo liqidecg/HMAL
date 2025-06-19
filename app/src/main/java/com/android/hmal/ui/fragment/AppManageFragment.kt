@@ -1,11 +1,11 @@
-package com.android.hmal.ui.fragment
+package com.android.lbe.ui.fragment
 
 import android.os.Bundle
 import com.google.android.material.transition.MaterialSharedAxis
 import com.lbe.security.R
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.ui.adapter.AppManageAdapter
-import com.android.hmal.ui.util.navController
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.ui.adapter.AppManageAdapter
+import com.android.lbe.ui.util.navController
 
 class AppManageFragment : AppSelectFragment() {
 

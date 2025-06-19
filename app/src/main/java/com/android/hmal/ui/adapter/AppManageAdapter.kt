@@ -1,8 +1,8 @@
-package com.android.hmal.ui.adapter
+package com.android.lbe.ui.adapter
 
 import android.view.ViewGroup
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.ui.view.AppItemView
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.ui.view.AppItemView
 
 class AppManageAdapter(
     private val onItemClickListener: (String) -> Unit

@@ -1,4 +1,4 @@
-package com.android.hmal.ui.fragment
+package com.android.lbe.ui.fragment
 
 import android.content.Intent
 import android.os.Build
@@ -17,16 +17,16 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.lbe.security.R
 import com.lbe.security.databinding.FragmentSettingsBinding
-import com.android.hmal.common.CommonUtils
-import com.android.hmal.common.Constants
-import com.android.hmal.sysApp
-import com.android.hmal.service.ConfigManager
-import com.android.hmal.service.PrefManager
-import com.android.hmal.service.ServiceClient
-import com.android.hmal.ui.util.makeToast
-import com.android.hmal.ui.util.setupToolbar
-import com.android.hmal.util.LangList
-import com.android.hmal.util.SuUtils
+import com.android.lbe.common.CommonUtils
+import com.android.lbe.common.Constants
+import com.android.lbe.sysApp
+import com.android.lbe.service.ConfigManager
+import com.android.lbe.service.PrefManager
+import com.android.lbe.service.ServiceClient
+import com.android.lbe.ui.util.makeToast
+import com.android.lbe.ui.util.setupToolbar
+import com.android.lbe.util.LangList
+import com.android.lbe.util.SuUtils
 import rikka.material.app.LocaleDelegate
 import rikka.preference.SimpleMenuPreference
 import java.util.*

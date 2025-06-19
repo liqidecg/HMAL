@@ -1,12 +1,12 @@
-package com.android.hmal.xposed.hook
+package com.android.lbe.xposed.hook
 
 import android.content.pm.ResolveInfo
 import com.github.kyuubiran.ezxhelper.utils.findMethod
 import com.github.kyuubiran.ezxhelper.utils.hookAfter
 import com.github.kyuubiran.ezxhelper.utils.hookBefore
 import de.robv.android.xposed.XC_MethodHook
-import com.android.hmal.common.Constants
-import com.android.hmal.xposed.*
+import com.android.lbe.common.Constants
+import com.android.lbe.xposed.*
 import java.util.concurrent.atomic.AtomicReference
 
 class PmsHookTarget28(private val service: HMALService) : IFrameworkHook {

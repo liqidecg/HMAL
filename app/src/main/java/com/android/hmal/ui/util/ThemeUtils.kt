@@ -1,4 +1,4 @@
-package com.android.hmal.ui.util
+package com.android.lbe.ui.util
 
 import android.content.Context
 import android.graphics.Color
@@ -9,7 +9,7 @@ import androidx.annotation.StyleRes
 import androidx.fragment.app.Fragment
 import com.google.android.material.color.DynamicColors
 import com.lbe.security.R
-import com.android.hmal.service.PrefManager
+import com.android.lbe.service.PrefManager
 import rikka.core.util.ResourceUtils
 
 object ThemeUtils {

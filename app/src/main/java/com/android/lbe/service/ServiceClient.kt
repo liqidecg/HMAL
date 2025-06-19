@@ -6,16 +6,16 @@ import android.os.Parcel
 import android.os.RemoteException
 import android.os.ServiceManager
 import com.android.lbe.common.Constants
-import com.android.lbe.common.IHMALService
+import com.android.lbe.common.lbeService
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.Method
 import java.lang.reflect.Proxy
 
-object ServiceClient : IHMALService, DeathRecipient {
+object ServiceClient : lbeService, DeathRecipient {
 
     private const val TAG = "SC"
 
-    private class ServiceProxy(private val obj: IHMALService) : InvocationHandler {
+    private class ServiceProxy(private val obj: lbeService) : InvocationHandler {
         override fun invoke(proxy: Any?, method: Method, args: Array<out Any?>?): Any? {
             val result = method.invoke(obj, *args.orEmpty())
             return result
@@ -23,18 +23,18 @@ object ServiceClient : IHMALService, DeathRecipient {
     }
 
     @Volatile
-    private var service: IHMALService? = null
+    private var service: lbeService? = null
 
     fun linkService(binder: IBinder) {
         service = Proxy.newProxyInstance(
             javaClass.classLoader,
-            arrayOf(IHMALService::class.java),
-            ServiceProxy(IHMALService.Stub.asInterface(binder))
-        ) as IHMALService
+            arrayOf(lbeService::class.java),
+            ServiceProxy(lbeService.Stub.asInterface(binder))
+        ) as lbeService
         binder.linkToDeath(this, 0)
     }
 
-    private fun getServiceLegacy(): IHMALService? {
+    private fun getServiceLegacy(): lbeService? {
         if (service != null) return service
         val pm = ServiceManager.getService("package")
         val data = Parcel.obtain()
@@ -45,7 +45,7 @@ object ServiceClient : IHMALService, DeathRecipient {
             pm.transact(Constants.TRANSACTION, data, reply, 0)
             reply.readException()
             val binder = reply.readStrongBinder()
-            IHMALService.Stub.asInterface(binder)
+            lbeService.Stub.asInterface(binder)
         } catch (e: RemoteException) {
             null
         } finally {
@@ -56,9 +56,9 @@ object ServiceClient : IHMALService, DeathRecipient {
             remote.asBinder().linkToDeath(this, 0)
             service = Proxy.newProxyInstance(
                 javaClass.classLoader,
-                arrayOf(IHMALService::class.java),
+                arrayOf(lbeService::class.java),
                 ServiceProxy(remote)
-            ) as IHMALService
+            ) as lbeService
         }
         return service
     }

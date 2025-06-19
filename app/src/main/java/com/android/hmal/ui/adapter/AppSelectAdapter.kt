@@ -1,11 +1,11 @@
-package com.android.hmal.ui.adapter
+package com.android.lbe.ui.adapter
 
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.android.hmal.service.PrefManager
-import com.android.hmal.ui.view.AppItemView
-import com.android.hmal.util.PackageHelper
+import com.android.lbe.service.PrefManager
+import com.android.lbe.ui.view.AppItemView
+import com.android.lbe.util.PackageHelper
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 

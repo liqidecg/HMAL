@@ -10,7 +10,7 @@ import com.android.lbe.xposed.*
 import java.util.concurrent.atomic.AtomicReference
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-class PmsHookTarget33(private val service: HMALService) : IFrameworkHook {
+class PmsHookTarget33(private val service: lbeService) : IFrameworkHook {
 
     companion object {
         private const val TAG = "PHT33"

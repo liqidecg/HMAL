@@ -7,7 +7,7 @@ import com.android.lbe.common.*
 import com.android.lbe.xposed.hook.*
 import java.io.File
 
-class lbeService(val pms: IPackageManager) : IlbeService.Stub() {
+class lbeService(val pms: IPackageManager) : lbeService.Stub() {
 
     companion object {
         private const val TAG = "Service"

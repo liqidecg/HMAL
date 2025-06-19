@@ -1,4 +1,4 @@
-package com.android.hmal.ui.fragment
+package com.android.lbe.ui.fragment
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.lbe.security.R
 import com.lbe.security.databinding.FragmentAppSelectBinding
-import com.android.hmal.service.PrefManager
-import com.android.hmal.ui.adapter.AppSelectAdapter
-import com.android.hmal.ui.util.navController
-import com.android.hmal.ui.util.setupToolbar
-import com.android.hmal.util.PackageHelper
+import com.android.lbe.service.PrefManager
+import com.android.lbe.ui.adapter.AppSelectAdapter
+import com.android.lbe.ui.util.navController
+import com.android.lbe.ui.util.setupToolbar
+import com.android.lbe.util.PackageHelper
 import kotlinx.coroutines.launch
 
 abstract class AppSelectFragment : Fragment(R.layout.fragment_app_select) {

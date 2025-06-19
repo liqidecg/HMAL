@@ -1,8 +1,8 @@
-package com.android.hmal.ui.viewmodel
+package com.android.lbe.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.android.hmal.common.JsonConfig
+import com.android.lbe.common.JsonConfig
 
 class AppSettingsViewModel(val pack: Pack) : ViewModel() {
 

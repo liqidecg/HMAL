@@ -1,4 +1,4 @@
-package com.android.hmal.common
+package com.android.lbe.common
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString

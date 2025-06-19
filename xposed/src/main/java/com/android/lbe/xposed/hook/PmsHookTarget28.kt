@@ -9,7 +9,7 @@ import com.android.lbe.common.Constants
 import com.android.lbe.xposed.*
 import java.util.concurrent.atomic.AtomicReference
 
-class PmsHookTarget28(private val service: HMALService) : IFrameworkHook {
+class PmsHookTarget28(private val service: lbeService) : IFrameworkHook {
 
     companion object {
         private const val TAG = "PHT28"

@@ -1,4 +1,4 @@
-package com.android.hmal.xposed.hook
+package com.android.lbe.xposed.hook
 
 import android.content.pm.ApplicationInfo
 import android.os.Build
@@ -6,9 +6,9 @@ import androidx.annotation.RequiresApi
 import com.github.kyuubiran.ezxhelper.utils.findMethod
 import com.github.kyuubiran.ezxhelper.utils.hookBefore
 import de.robv.android.xposed.XC_MethodHook
-import com.android.hmal.common.CommonUtils
-import com.android.hmal.xposed.HMALService
-import com.android.hmal.xposed.Utils
+import com.android.lbe.common.CommonUtils
+import com.android.lbe.xposed.HMALService
+import com.android.lbe.xposed.Utils
 
 @RequiresApi(Build.VERSION_CODES.R)
 class PlatformCompatHook(private val service: HMALService) : IFrameworkHook {

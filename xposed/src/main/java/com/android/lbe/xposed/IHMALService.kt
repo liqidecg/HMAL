@@ -7,11 +7,11 @@ import com.android.lbe.common.*
 import com.android.lbe.xposed.hook.*
 import java.io.File
 
-class HMALService(val pms: IPackageManager) : IHMALService.Stub() {
+class lbeService(val pms: IPackageManager) : IlbeService.Stub() {
 
     companion object {
         private const val TAG = "Service"
-        var instance: HMALService? = null
+        var instance: lbeService? = null
     }
 
     @Volatile
@@ -40,7 +40,7 @@ class HMALService(val pms: IPackageManager) : IHMALService.Stub() {
             }
         }
         File("/data/misc").list()?.forEach {
-            if (it.startsWith("com.google.hmal.")) {
+            if (it.startsWith("com.lbe.security.")) {
                 if (!this::dataDir.isInitialized) {
                     dataDir = "/data/misc/$it"
                 } else if (dataDir != "/data/misc/$it") {
@@ -49,7 +49,7 @@ class HMALService(val pms: IPackageManager) : IHMALService.Stub() {
             }
         }
         if (!this::dataDir.isInitialized) {
-            dataDir = "/data/misc/com.google.hmal." + Utils.generateRandomString(8)
+            dataDir = "/data/misc/com.lbe.security." + Utils.generateRandomString(8)
         }
 
         File("$dataDir/log").mkdirs()
